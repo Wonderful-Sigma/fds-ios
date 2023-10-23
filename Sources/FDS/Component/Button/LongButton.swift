@@ -15,13 +15,15 @@ public struct LongButton: View {
     }
     
     public var body: some View {
-        Text(title)
-            .font(.system(size: 18, weight: .semibold))
-            .foregroundStyle(type.foregroundColor)
-            .padding(.vertical, 18)
-            .frame(maxWidth: .infinity)
-            .background(type.backgroundColor)
-            .clipShape(RoundedRectangle(cornerRadius: 17))
+        Button(action: action) {
+            Text(title)
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(type.foregroundColor)
+                .padding(.vertical, 18)
+                .frame(maxWidth: .infinity)
+                .background(type.backgroundColor)
+                .clipShape(RoundedRectangle(cornerRadius: 17))
+        }
     }
     
     public enum LongButtonType {
