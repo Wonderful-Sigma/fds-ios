@@ -4,6 +4,7 @@ import SwiftUI
 public enum FlickImage: String {
     
     case logo = "Logo"
+    case arrow = "Arrow"
     case qrOuterShape = "QROuterShape"
     case reloadIcon = "ReloadIcon"
 }

@@ -23,6 +23,7 @@ dependencies: [
 
 ## 컴포넌트
 - [LargeButton](#largebutton)
+- [LongButton](#longbutton)
 - [SmallButton](#smallbutton)
 - [CoinCell](#coincell)
 - [Modal](#modal)
@@ -35,6 +36,9 @@ import OpenTDS
 
 ### LargeButton
 > 홈 화면의 큰 버튼
+
+### LongButtonButton
+> 긴 둥근 사각형의 버튼
 
 ### SmallButton
 > 홈 화면의 작은 버튼
