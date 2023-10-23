@@ -49,7 +49,6 @@ public struct LargeButton: View {
             }
             if let content {
                 content
-                    .padding(.horizontal, 25)
                     .padding(.bottom, 22)
             }
         }
