@@ -1,7 +1,7 @@
 import Foundation
 
 @available(macOS 12, iOS 15, *)
-extension Int {
+public extension Int {
     
     func formatted() -> String {
         let numberFormatter = NumberFormatter()
