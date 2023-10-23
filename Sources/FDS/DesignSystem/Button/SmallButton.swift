@@ -21,7 +21,7 @@ public struct SmallButton: View {
                 .font(.system(size: 13, weight: .medium))
                 .foregroundStyle(highlight
                                  ? Color.blue500
-                                 : Color.subtitle)
+                                 : Color.subTitle)
                 .padding(.vertical, 7)
                 .padding(.horizontal, title.count > 2 ? 10 : 15)
                 .background(highlight

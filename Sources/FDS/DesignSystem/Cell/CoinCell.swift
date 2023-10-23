@@ -38,7 +38,7 @@ public struct CoinCell: View {
             VStack(alignment: .leading) {
                 Text(title)
                     .font(.system(size: 13, weight: .regular))
-                    .foregroundStyle(Color.subtitle)
+                    .foregroundStyle(Color.subTitle)
                 Text({ () -> String in
                     let numberFormatter = NumberFormatter()
                     numberFormatter.numberStyle = .decimal

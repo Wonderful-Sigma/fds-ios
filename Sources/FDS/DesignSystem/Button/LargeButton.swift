@@ -40,7 +40,7 @@ public struct LargeButton: View {
                             .resizable()
                             .frame(width: 7, height: 12)
                             .font(.title.weight(.bold))
-                            .foregroundStyle(Color.lightgray)
+                            .foregroundStyle(Color.lightGray)
                     }
                 }
                 .padding(.horizontal, 25)

@@ -12,10 +12,11 @@ let package = Package(
             targets: ["FDS"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/dagronf/qrcode.git", from: "16.1.1")
     ],
     targets: [
         .target(
             name: "FDS",
-            dependencies: [])
+            dependencies: [.product(name: "QRCode", package: "qrcode")])
     ]
 )

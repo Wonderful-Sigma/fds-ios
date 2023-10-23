@@ -25,9 +25,9 @@ public extension Color {
     
     static let lightBlack: Color = dynamicColor("#1A1E27")
     static let title: Color      = dynamicColor("#353C49")
-    static let subtitle: Color   = dynamicColor("#505866")
+    static let subTitle: Color   = dynamicColor("#505866")
     static let gray: Color       = dynamicColor("#969FA8")
-    static let lightgray: Color  = dynamicColor("#B1B8C0")
+    static let lightGray: Color  = dynamicColor("#B1B8C0")
     static let button: Color     = dynamicColor("#DBDEE2")
     static let container: Color  = dynamicColor("#F2F3F4")
     
