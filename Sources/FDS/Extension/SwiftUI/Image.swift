@@ -3,6 +3,8 @@ import SwiftUI
 public enum FlickImage: String {
     
     case logo = "Logo"
+    case qrOuterShape = "QROuterShape"
+    case reloadIcon = "ReloadIcon"
 }
 
 public extension Image {

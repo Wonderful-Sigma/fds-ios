@@ -13,7 +13,7 @@ public struct QRShape: View {
     var document: QRCode.Document {
         let doc = QRCode.Document(utf8String: data)
         
-        doc.design.shape.eye = QRCode.EyeShape.Squircle()
+        doc.design.shape.eye = QRCode.EyeShape.RoundedRect()
         doc.design.shape.pupil = QRCode.PupilShape.Circle()
         doc.design.shape.onPixels = QRCode.PixelShape.RoundedPath()
         doc.design.style.onPixels = QRCode.FillStyle.Solid(Color.subTitle.cgColor!)
@@ -28,6 +28,5 @@ public struct QRShape: View {
     
     public var body: some View {
         QRCodeDocumentUIView(document: document)
-            .frame(width: 255, height: 255)
     }
 }
