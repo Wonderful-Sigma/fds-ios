@@ -1,34 +1,38 @@
 import SwiftUI
-import QRCode
 
 @available(macOS 12, iOS 15, *)
-public struct QRCodeView: View {
+struct QRCodeView: View {
     
-    var document: QRCode.Document {
-        let doc = QRCode.Document(utf8String: "Hi there!")
-        
-        doc.design.shape.eye = QRCode.EyeShape.Squircle()
-        doc.design.shape.pupil = QRCode.PupilShape.Circle()
-        doc.design.shape.onPixels = QRCode.PixelShape.RoundedPath()
-        doc.design.style.onPixels = QRCode.FillStyle.Solid(Color.subTitle.cgColor!)
-        
-        let rect = CGRect(x: 0.35, y: 0.35, width: 0.3, height: 0.3)
-        let path = CGPath(ellipseIn: rect, transform: nil)
-        let image = UIImage(named: "QRImage",
-                            in: .module,
-                            compatibleWith: nil)?.cgImage
-        
-        doc.logoTemplate = QRCode.LogoTemplate(image: image!, path: path, inset: 3)
-        
-        return doc
+    @Binding var data: String?
+    
+    init(_ data: Binding<String?>) {
+        self._data = data
     }
     
-    public var body: some View {
-        QRCodeDocumentUIView(document: document)
-            .frame(width: 50, height: 50)
+    var body: some View {
+        VStack {
+            if let data {
+                QRShape(data)
+            } else {
+                Text("QR코드를 다시 생성해주세요")
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundStyle(Color.lightGray)
+            }
+        }
+    }
+}
+
+@available(macOS 12, iOS 15, *)
+struct QRPreview: View {
+    
+    @State var data: String?
+    
+    var body: some View {
+         
+        QRCodeView($data)
     }
 }
 
 #Preview {
-    Preview()
+    QRPreview()
 }

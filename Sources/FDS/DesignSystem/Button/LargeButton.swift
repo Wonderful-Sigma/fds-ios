@@ -43,12 +43,13 @@ public struct LargeButton: View {
                             .foregroundStyle(Color.lightGray)
                     }
                 }
-                .padding(.horizontal, 15)
+                .padding(.horizontal, 25)
                 .padding(.top, 22)
                 .padding(.bottom, content == nil ? 22 : 12)
             }
             if let content {
                 content
+                    .padding(.horizontal, 15)
                     .padding(.bottom, 22)
             }
         }
