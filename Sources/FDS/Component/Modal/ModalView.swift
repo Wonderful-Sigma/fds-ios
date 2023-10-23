@@ -38,7 +38,7 @@ public struct ModalView<C: View, V: View>: View {
                             }
                         if animatedPresentation {
                             Color.white
-                                .frame(height: -min(dragOffset, 0))
+                                .frame(height: -min(dragOffset, 0) * 2)
                             let bottomSafeArea = geometryProxy.safeAreaInsets.bottom
                             VStack(spacing: 0) {
                                 Capsule()
@@ -51,6 +51,9 @@ public struct ModalView<C: View, V: View>: View {
                             .padding(.bottom, bottomSafeArea)
                             .frame(maxWidth: .infinity)
                             .background(Color.white)
+                            .clipShape(ModalShape())
+                            .background(ModalShape()
+                                .stroke(Color.container, lineWidth: 2))
                             .offset(y: dragOffset)
                             .transition(.move(edge: .bottom))
                             .zIndex(1)
@@ -68,7 +71,7 @@ public struct ModalView<C: View, V: View>: View {
                                     }
                                     .onEnded { _ in
                                         startOffset = nil
-                                        if dragOffset > 100 {
+                                        if dragOffset > geometryProxy.size.height / 3 {
                                             isPresented = false
                                         }
                                         withAnimation(.spring) {
@@ -82,23 +85,4 @@ public struct ModalView<C: View, V: View>: View {
                 }
             )
     }
-}
-
-struct ModalPreview: View {
-    
-    @State var isPresented: Bool = true
-    
-    var body: some View {
-        ZStack {
-            Color.red
-        }
-        .modal(isPresented: $isPresented) {
-            Text("aa")
-                .frame(height: 100)
-        }
-    }
-}
-
-#Preview {
-    ModalPreview()
 }

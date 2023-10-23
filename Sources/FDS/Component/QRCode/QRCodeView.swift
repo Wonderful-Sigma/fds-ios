@@ -102,25 +102,10 @@ public struct QRCodeView: View {
             }
         }
         .foregroundStyle(Color.subTitle)
+        .padding(.bottom, 35)
         .task {
             await executeAction()
             _ = timer
         }
     }
-}
-
-@available(macOS 12, iOS 15, *)
-struct QRPreview: View {
-    
-    @State var data: String? = "qifiqewf"
-    
-    var body: some View {
-        QRCodeView(coin: 1000) {
-            return "dd"
-        }
-    }
-}
-
-#Preview {
-    QRPreview()
 }
