@@ -20,13 +20,13 @@ public struct SmallButton: View {
             Text(title)
                 .font(.system(size: 13, weight: .medium))
                 .foregroundStyle(highlight
-                                 ? Color.primary
-                                 : Color.secondaryLabel)
+                                 ? Color.blue500
+                                 : Color.subtitle)
                 .padding(.vertical, 7)
                 .padding(.horizontal, title.count > 2 ? 10 : 15)
                 .background(highlight
-                            ? Color.primaryBackground
-                            : Color.background)
+                            ? Color.blue50
+                            : Color.container)
                 .cornerRadius(7)
         }
     }

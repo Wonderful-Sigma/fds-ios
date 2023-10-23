@@ -17,7 +17,7 @@ public struct CoinCell: View {
                 image
                     .resizable()
             } placeholder: {
-                Color.background
+                Color.container
             }
                 .frame(width: 40, height: 40)
                 .clipShape(Circle())
@@ -38,7 +38,7 @@ public struct CoinCell: View {
             VStack(alignment: .leading) {
                 Text(title)
                     .font(.system(size: 13, weight: .regular))
-                    .foregroundStyle(Color.secondaryLabel)
+                    .foregroundStyle(Color.subtitle)
                 Text({ () -> String in
                     let numberFormatter = NumberFormatter()
                     numberFormatter.numberStyle = .decimal
@@ -46,7 +46,7 @@ public struct CoinCell: View {
                     return "\(string ?? "0")코인"
                 }())
                 .font(.system(size: 17, weight: .semibold))
-                .foregroundStyle(Color.label)
+                .foregroundStyle(Color.title)
             }
         }
     }

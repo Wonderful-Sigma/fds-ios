@@ -33,14 +33,14 @@ public struct LargeButton: View {
                 HStack {
                     Text(title)
                         .font(.system(size: 22, weight: .bold))
-                        .foregroundStyle(Color.label)
+                        .foregroundStyle(Color.title)
                     Spacer()
                     if showChevron {
                         Image(systemName: "chevron.right")
                             .resizable()
                             .frame(width: 7, height: 12)
                             .font(.title.weight(.bold))
-                            .foregroundStyle(Color.chevron)
+                            .foregroundStyle(Color.lightgray)
                     }
                 }
                 .padding(.horizontal, 25)
@@ -53,7 +53,7 @@ public struct LargeButton: View {
                     .padding(.bottom, 22)
             }
         }
-        .background(Color.foreground)
+        .background(Color.white)
         .cornerRadius(20)
     }
 }

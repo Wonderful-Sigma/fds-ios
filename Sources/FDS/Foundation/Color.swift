@@ -23,11 +23,22 @@ public extension Color {
         }
     }
     
-    static let primary: Color           = dynamicColor("#3250FF")
-    static let primaryBackground: Color = dynamicColor("#ECEFFF")
-    static let label: Color             = dynamicColor("#353C49")
-    static let secondaryLabel: Color    = dynamicColor("#505866")
-    static let chevron: Color           = dynamicColor("#B1B8C0")
-    static let background: Color        = dynamicColor("#F2F3F4")
-    static let foreground: Color        = dynamicColor("#FFFFFF")
+    static let lightBlack: Color = dynamicColor("#1A1E27")
+    static let title: Color      = dynamicColor("#353C49")
+    static let subtitle: Color   = dynamicColor("#505866")
+    static let gray: Color       = dynamicColor("#969FA8")
+    static let lightgray: Color  = dynamicColor("#B1B8C0")
+    static let button: Color     = dynamicColor("#DBDEE2")
+    static let container: Color  = dynamicColor("#F2F3F4")
+    
+    static let blue50: Color  = dynamicColor("#EBEEFF")
+    static let blue100: Color = dynamicColor("#BFC9FF")
+    static let blue200: Color = dynamicColor("#A1AFFF")
+    static let blue300: Color = dynamicColor("#768AFF")
+    static let blue400: Color = dynamicColor("#5B73FF")
+    static let blue500: Color = dynamicColor("#3250FF")
+    static let blue600: Color = dynamicColor("#2E49E8")
+    static let blue700: Color = dynamicColor("#2439B5")
+    static let blue800: Color = dynamicColor("#1C2C8C")
+    static let blue900: Color = dynamicColor("#15226B")
 }
