@@ -17,7 +17,7 @@ public struct CoinCell: View {
                 image
                     .resizable()
             } placeholder: {
-                Color.container
+                Image("AccountImage")
             }
                 .frame(width: 40, height: 40)
                 .clipShape(Circle())
