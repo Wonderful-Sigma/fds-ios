@@ -50,6 +50,7 @@ public struct LinearTextField: View {
               .focused($focus)
           } else {
             TextField("", text: $text)
+              .keyboardType(keyboardType)
               .focused($focus)
               .autocapitalization(.none)
           }
