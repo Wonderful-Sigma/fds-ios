@@ -32,14 +32,15 @@ public struct LinearTextField: View {
   public var body: some View {
     VStack(alignment: .leading, spacing: 0) {
       Spacer()
-      if animatedFocus {
+      let condition = animatedFocus && !text.isEmpty
+      if condition {
         Text(placeholder)
           .scaleEffect(0.65, anchor: .leading)
           .foregroundStyle(animatedFocus ? Color.blue500 : .lightGray)
           .matchedGeometryEffect(id: "text", in: animation)
       }
       ZStack(alignment: .leading) {
-        if !animatedFocus {
+        if !condition {
           Text(placeholder)
             .foregroundStyle(Color.lightGray)
             .matchedGeometryEffect(id: "text", in: animation)
