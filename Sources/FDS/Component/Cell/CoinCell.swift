@@ -50,4 +50,5 @@ public struct CoinCell: View {
             }
         }
     }
+  }
 }
