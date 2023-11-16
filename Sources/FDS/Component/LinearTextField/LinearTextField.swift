@@ -32,7 +32,7 @@ public struct LinearTextField: View {
   public var body: some View {
     VStack(alignment: .leading, spacing: 0) {
       Spacer()
-      let condition = animatedFocus && !text.isEmpty
+      let condition = animatedFocus || !text.isEmpty
       if condition {
         Text(placeholder)
           .scaleEffect(0.65, anchor: .leading)
