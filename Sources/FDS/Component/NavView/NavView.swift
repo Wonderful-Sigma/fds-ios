@@ -10,7 +10,7 @@ public struct NavView<C: View>: View {
   let showsIndicators: Bool
   let backButtonExists: Bool
   let backButtonAction: (() -> Void)?
-  let scrollable: Bool
+  let isScrollable: Bool
   let trailingView: AnyView?
   let content: () -> C
 
@@ -18,14 +18,14 @@ public struct NavView<C: View>: View {
               showsIndicators: Bool = true,
               backButtonExists: Bool = false,
               backButtonAction: (() -> Void)? = nil,
-              scrollable: Bool = false,
+              isScrollable: Bool = false,
               trailingView: AnyView? = nil,
               @ViewBuilder content: @escaping () -> C) {
     self.title = title
     self.showsIndicators = showsIndicators
     self.backButtonExists = backButtonExists
     self.backButtonAction = backButtonAction
-    self.scrollable = scrollable
+    self.isScrollable = isScrollable
     self.trailingView = trailingView
     self.content = content
   }
@@ -35,7 +35,7 @@ public struct NavView<C: View>: View {
       ZStack {
         Text(title)
           .font(.system(size: 17, weight: .medium))
-          .opacity(shrink || !scrollable ? 1 : 0)
+          .opacity(shrink || !isScrollable ? 1 : 0)
           .padding(.vertical, 6)
         HStack(spacing: 26) {
           if backButtonExists {
@@ -60,7 +60,7 @@ public struct NavView<C: View>: View {
         .padding(.horizontal, 18)
       }
       .frame(maxWidth: .infinity)
-      if scrollable {
+      if isScrollable {
         GeometryReader { outsideProxy in
           ScrollView(showsIndicators: showsIndicators) {
             VStack(spacing: 36) {
@@ -95,7 +95,18 @@ public extension NavView {
             showsIndicators: self.showsIndicators,
             backButtonExists: true,
             backButtonAction: action,
-            scrollable: self.scrollable,
+            isScrollable: self.isScrollable,
+            trailingView: self.trailingView) {
+      self.content()
+    }
+  }
+  
+  func scrollable() -> NavView {
+    NavView(self.title,
+            showsIndicators: self.showsIndicators,
+            backButtonExists: self.backButtonExists,
+            backButtonAction: self.backButtonAction,
+            isScrollable: self.isScrollable,
             trailingView: self.trailingView) {
       self.content()
     }
@@ -106,7 +117,7 @@ public extension NavView {
             showsIndicators: self.showsIndicators,
             backButtonExists: self.backButtonExists,
             backButtonAction: self.backButtonAction,
-            scrollable: self.scrollable,
+            isScrollable: self.isScrollable,
             trailingView: AnyView(content())) {
       self.content()
     }
