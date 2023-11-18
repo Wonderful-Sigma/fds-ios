@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(macOS 12, iOS 15, *)
 public struct LinearTextField: View {
   
   @Namespace private var animation
