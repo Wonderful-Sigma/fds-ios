@@ -17,12 +17,14 @@ public struct QRShape: View {
     doc.design.shape.pupil = QRCode.PupilShape.Circle()
     doc.design.shape.onPixels = QRCode.PixelShape.RoundedPath()
     doc.design.style.onPixels = QRCode.FillStyle.Solid(Color.subTitle.cgColor!)
+    /* 
+    /// qr 코드 인식률 감소를 해결하기 위한 주석
     let image = UIImage(named: "QRImage",
                         in: .module,
                         compatibleWith: nil)?.cgImage
     
-    doc.logoTemplate = QRCode.LogoTemplate.SquareCenter(image: image!, inset: 0)
-    
+    doc.logoTemplate = QRCode.LogoTemplate.SquareCenter(image: image!, inset: 0)\
+    */
     return doc
   }
   
