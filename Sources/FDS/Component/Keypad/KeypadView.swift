@@ -1,7 +1,7 @@
 import SwiftUI
 
 @available(macOS 12, iOS 15, *)
-public struct TestKeypadView: View {
+public struct KeypadView: View {
   
   @Binding var value: Int
   @Binding var myPoint: Int
