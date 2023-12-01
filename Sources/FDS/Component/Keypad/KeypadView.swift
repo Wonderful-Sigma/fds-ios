@@ -1,12 +1,14 @@
 import SwiftUI
 
 @available(macOS 12, iOS 15, *)
-public struct KeypadView: View {
+public struct TestKeypadView: View {
   
   @Binding var value: Int
+  @Binding var myPoint: Int
   
-  public init(_ value: Binding<Int>) {
+  public init(_ value: Binding<Int>, myPoint: Binding<Int>) {
     self._value = value
+    self._myPoint = myPoint
   }
   
   public var body: some View {
@@ -23,6 +25,7 @@ public struct KeypadView: View {
             .padding(.vertical, 17)
             .frame(maxWidth: .infinity)
         }
+        .disabled(value > myPoint)
       }
       Button {
         value = value / 10
